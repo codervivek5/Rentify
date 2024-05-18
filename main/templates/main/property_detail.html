@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<h2>Property Details</h2>
+<p>Place: {{ property.place }}</p>
+<p>Area: {{ property.area }} sqft</p>
+<p>Bedrooms: {{ property.bedrooms }}</p>
+<p>Bathrooms: {{ property.bathrooms }}</p>
+<p>Nearby Hospitals: {{ property.nearby_hospitals }}</p>
+<p>Nearby Colleges: {{ property.nearby_colleges }}</p>
+<p>Price: ${{ property.price }}</p>
+<p>Amenities: {{ property.amenities }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">I'm Interested</button>
+</form>
+{% endblock %}
