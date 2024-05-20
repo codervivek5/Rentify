@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Rentify/wsgi.py",
+        "use": "@vercel/static-build",
+        "config": {}
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/media/(.*)",
+        "dest": "/media/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "Rentify/wsgi.py"
+      }
+    ]
+  }
